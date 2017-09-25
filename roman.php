@@ -87,10 +87,16 @@
             }
           }
         }
-        echo $roman;
+        return  $roman;
       }
     }
-    convert(2273);   
+
+    $arr = ['1' => convert(2),
+            '2' => convert(227),
+            '3' => convert(2273)
+            ];
+    echo json_encode($arr);
+ 
 ?>
 <!-- 
 I = 1
