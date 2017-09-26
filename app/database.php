@@ -1,7 +1,9 @@
 <?php
-//using namespace
+
+//using eloquent capsule namespace
 use Illuminate\Database\Capsule\Manager as Capsule;
 
+//using capsule for connecting to db 
 
 $capsule = new Capsule();
 
