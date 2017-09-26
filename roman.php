@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 
-  function convert($num){
+  public function convert($num){
       $roman = "";
 
-      
+
       if($num > 4000 || $num<=0 ){
         echo "please enter a number between 1 to 3999";
       }
@@ -29,7 +29,7 @@
           else if($piece >= 5){
             $roman .= 'D';
             for($i = 0; $i < $piece-5; $i++) {
-              $roman .= 'C'; 
+              $roman .= 'C';
             }
           }
           else if($piece == 4) {
@@ -42,7 +42,7 @@
           }
           $num = $num % 100;
         }
-        
+
         //27
         if ($num >= 10){
 
@@ -51,7 +51,7 @@
                   $roman .= "XC";
                 }
                 else if ($piece >= '5') {
-                  $roman .= 'L'; 
+                  $roman .= 'L';
                   for($i=0; $i<$piece-5; $i++){
                     $roman .= 'X';
                   }
@@ -61,10 +61,10 @@
                 }
                 else if ($piece >= 1){
                   for($i=0; $i<$piece; $i++){
-                    $roman .= 'X'; 
+                    $roman .= 'X';
                   }
-                }   
-                $num = $num % 10; 
+                }
+                $num = $num % 10;
         }
         //7
         if ($num >= 1) {
@@ -76,7 +76,7 @@
             $roman .= "V";
             for($i = 0; $i < $piece - 5; $i++){
               $roman .= "I";
-            } 
+            }
           }
           else if($piece == 4){
             $roman .= "IV";
@@ -96,9 +96,9 @@
             '3' => convert(2273)
             ];
     echo json_encode($arr);
- 
+
 ?>
-<!-- 
+<!--
 I = 1
 V = 5
 X = 10
@@ -111,7 +111,7 @@ subtractions
 4 = IV
 9 = IX
 
-900 = CM 
+900 = CM
 
 400 = CD
 -->
