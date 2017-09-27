@@ -1,6 +1,6 @@
 <?php
 
-class Convert extends Controller
+class Convert extends Controller implements convertion
 {
 
   public function create($number = '')

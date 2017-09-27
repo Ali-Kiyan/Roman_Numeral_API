@@ -13,6 +13,9 @@ class App
       $this->controller = $url[0];
       //unsetting the url for security reasons
       unset($url[0]);
+      if ($this->controller == 'convert'){
+        require_once '../app/controllers/convert_interface.php';
+      }
      }
      require_once '../app/controllers/' . $this->controller . '.php';
      //instanciating
@@ -29,7 +32,7 @@ class App
      }
      //forming a new array based of new values if exists
      $this->params = $url ? array_values($url) : [];
-     //take the array containg the controller and the method and pass true the second argument which is params  
+     //take the array containg the controller and the method and pass true the second argument which is params
      call_user_func_array([$this->controller, $this->method], $this->params);
     }
     public function parseUrl()
